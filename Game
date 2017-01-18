@@ -1,0 +1,70 @@
+import time
+import random
+
+class colour:
+    backYELLOW = '\033[103m'
+    backDARKYELLOW = '\033[102m'
+    backBLACK = '\033[107m'
+    backDARKGREY = '\033[100m'
+    backLIGHTGREY = '\033[47m'
+    backGREY = '\033[7m'
+    backDARKCYAN = '\033[46m'
+    backCYAN = '\033[106m'
+    backPURPLE = '\033[45m'
+    backBLUE = '\033[104m'
+    backDARKBLUE = '\033[44m'
+    backWHITE = '\033[40m'
+    backRED = '\033[41m'
+    backPINK = '\033[105m'
+    backGOLD = '\033[42m'
+    BLACK = '\033[97m'
+    DARKGREY = '\033[90m'
+    GREY = '\033[37m'
+    PURPLE = '\033[95m'
+    DARKPURPLE = '\033[35m'
+    BLUE = '\033[94m'
+    DARKBLUE = '\033[34m'
+    DARKCYAN = '\033[36m'
+    CYAN = '\033[96m'
+    YELLOW = '\033[93m'
+    DARKYELLOW = '\033[33m'
+    GOLD = '\033[32m'
+    RED = '\033[31m'
+    PINK = '\033[95m'
+    SALMONPINK = '\033[91m'
+    WHITE = '\033[30m'
+    UNDERLINE = '\033[4m'
+    BOLD = '\033[1m'
+    END = '\033[0m'
+
+class Pokemon:
+    hp = 100
+
+    def tackle(self):
+        print('You used Tackle!')
+        self.hp -= 15
+
+    def quickAttack(self):
+        print('You used Quick Attack!')
+        self.hp -= 18
+
+    def checkhp(self):
+        if self.hp <= 0:
+            print('Fainted')
+        else:
+            print(str(self.hp) + " HP left")
+
+pokemon1 = Pokemon()
+pokemon2 = Pokemon()
+
+while pokemon1.hp > 0:
+    print("Which move would you like to use?")
+    print("[1] Tackle")
+    print("[2] Quick Attack")
+    move1 = input("Move: ")
+    if move1 == str(1):
+        pokemon1.tackle()
+        pokemon1.checkhp()
+    elif move1 == str(2):
+        pokemon1.quickAttack()
+        pokemon1.checkhp()
